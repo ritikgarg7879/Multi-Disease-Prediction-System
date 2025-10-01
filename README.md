@@ -1,6 +1,6 @@
 # 🧑‍⚕️ Multi-Disease Prediction System
 
-A Streamlit-based Machine Learning Web App that predicts the likelihood of Heart Disease, Parkinson's Disease, and Diabetes using trained ML models.
+A **Streamlit-based Machine Learning Web App** that predicts the likelihood of **Heart Disease**, **Parkinson's Disease**, and **Diabetes** using trained ML models.
 
 🔗 **Live Demo:** [Multi-Disease Prediction App](https://multi-disease-prediction-system-by-ritikgarg7879.streamlit.app/)
 
@@ -8,184 +8,138 @@ A Streamlit-based Machine Learning Web App that predicts the likelihood of Heart
 
 ## 🚀 Features
 
-### Three Diseases Supported
-- ❤️ Heart Disease  
-- 🧠 Parkinson’s Disease  
-- 💉 Diabetes  
-
-### Machine Learning Models
-- Logistic Regression  
-- Random Forest  
-- Support Vector Machine (SVM)  
-- Naive Bayes  
-- Decision Tree  
-- KNN  
-- XGBoost  
-
-### Model Selection & Tuning
-- Performed EDA on datasets  
-- Used RandomizedSearchCV and GridSearchCV for hyperparameter tuning  
-- Applied Cross-Validation for robust evaluation  
-
-### Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-Score  
-- ROC-AUC Curve  
-- Confusion Matrix  
-- Feature Importance (for Heart Disease)  
+* Predicts **Heart Disease**, **Parkinson's Disease**, and **Diabetes**.
+* Multiple ML models supported: Logistic Regression, Random Forest, SVM, Naive Bayes, Decision Tree, KNN, XGBoost.
+* Hyperparameter tuning with `RandomizedSearchCV` and `GridSearchCV`.
+* Model evaluation: Accuracy, Precision, Recall, F1-score, ROC-AUC, Confusion Matrix.
+* Model persistence with `joblib` and easy deployment on Streamlit Cloud.
 
 ---
 
-## 📊 Datasets Used
-- Diabetes Dataset: PIMA Indian Diabetes Dataset  
-- Heart Disease Dataset: UCI Cleveland Heart Disease Dataset  
-- Parkinson’s Disease Dataset: UCI Parkinson’s Dataset  
+## 📊 Datasets
+
+* **Diabetes**: PIMA Indian Diabetes Dataset.
+* **Heart Disease**: UCI Cleveland Heart Disease Dataset.
+* **Parkinson's Disease**: UCI Parkinson's Dataset.
 
 ---
 
 ## 🧪 Workflow
 
-1. **Exploratory Data Analysis (EDA)**
-   - Checked missing values, distributions, correlations using pandas, matplotlib, seaborn.  
-   - Plotted histograms, heatmaps, and feature importance.  
-
-2. **Model Training**
-   - Split datasets into train/test sets.  
-   - Trained multiple models (Logistic Regression, RF, SVM, NB, KNN, XGBoost).  
-
-3. **Model Evaluation**
-   - Used Accuracy, Precision, Recall, F1-score.  
-   - Visualized Confusion Matrices.  
-   - Generated ROC Curves & AUC Scores.  
-
-4. **Hyperparameter Tuning**  
-   - RandomizedSearchCV & GridSearchCV used for optimal parameters.  
-   - Example (Diabetes):  
-     - Logistic Regression Best Params → `{ 'C': 0.233, 'solver': 'liblinear' }`  
-     - Random Forest Best Params → `{ 'n_estimators': 210, 'max_depth': 3, 'min_samples_leaf': 19 }`  
-
-5. **Cross-Validation**  
-   - Performed 5-fold cross-validation for accuracy, precision, recall, F1.  
-   - Average metrics:  
-     - Accuracy ≈ 84–89%  
-     - Precision ≈ 82%  
-     - Recall ≈ 92%  
-     - F1 Score ≈ 87%  
-
-6. **Model Saving**  
-   - Best models saved with Joblib (.pkl files).  
-   - Example: `parkinsons_rf_model.pkl`.  
-
-7. **Deployment**  
-   - Built frontend with Streamlit.  
-   - Deployed app on Streamlit Cloud.  
+1. **EDA** — check missing values, distributions, correlations; plot histograms and heatmaps.
+2. **Preprocessing** — scale/normalize features, handle missing values, encode categorical features.
+3. **Train** — split into train/test, train multiple models, cross-validation.
+4. **Hyperparameter Tuning** — use `RandomizedSearchCV` / `GridSearchCV` to find best parameters.
+5. **Evaluate** — metrics, confusion matrices, ROC curves.
+6. **Save Models** — persist best models using `joblib` (e.g., `parkinsons_rf_model.pkl`).
+7. **Deploy** — build UI with Streamlit and deploy on Streamlit Cloud.
 
 ---
 
 ## 📈 Results Summary
 
-### ✅ Heart Disease
-- Logistic Regression (GridSearchCV tuned) → Accuracy ~ 89%  
-- Feature importance visualized (Age, Sex, CP, Chol, Thalach etc.)  
-
-### ✅ Diabetes
-- Logistic Regression (best tuned) → Accuracy ~ 88%  
-- Random Forest → Accuracy ~ 87%  
-- KNN (best k=15) → 75%  
-
-### ✅ Parkinson’s Disease
-- Random Forest Classifier → Accuracy ~ 89-93%  
-- Metrics:  
-  - Accuracy: 0.898  
-  - Precision: 0.954  
-  - Recall: 0.923  
-  - F1: 0.96  
+* **Heart Disease**: Logistic Regression → Accuracy ≈ 89%
+* **Diabetes**: Naive Bayes → Accuracy ≈ 88%
+* **Parkinson's Disease**: Random Forest → Accuracy ≈ 89–93%
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Frontend: Streamlit  
-- Backend Models: Scikit-learn, XGBoost  
-- Visualization: Matplotlib, Seaborn  
-- Model Persistence: Joblib  
-- Deployment: Streamlit Cloud  
+* **Frontend:** Streamlit
+* **Models:** scikit-learn, XGBoost
+* **Visualization:** matplotlib, seaborn
+* **Persistence:** joblib
+* **Deployment:** Streamlit Cloud
 
 ---
 
 ## ⚡ How to Run Locally
 
-Clone the Repository
+### 1. Clone the Repository
 
+```bash
 git clone https://github.com/ritikgarg7879/Multi-Disease-Prediction-System.git
-cd multi-disease-prediction
+cd Multi-Disease-Prediction-System
+```
 
----
+### 2. Create Virtual Environment (Optional)
 
-### Create Virtual Environment (Optional but Recommended)
-
+```bash
 python -m venv venv
-source venv/bin/activate # For Linux/Mac
-venv\Scripts\activate # For Windows
+# Linux / Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+```
 
+### 3. Install Dependencies
 
----
-
-### Install Dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
-Example `requirements.txt` contents:
+**Example `requirements.txt`**
 
-streamlit==1.49.0
-scikit-learn==1.5.2
-joblib==1.4.2
-streamlit-option-menu==0.4.0
+```
+streamlit
+numpy
+pandas
+scikit-learn
+xgboost
+joblib
+matplotlib
+seaborn
+```
 
----
+### 4. Add Saved Models
 
-### Run the App
+Place `.pkl` files inside a `models/` folder:
 
+* `models/diabetes_best_model.pkl`
+* `models/heart_best_model.pkl`
+* `models/parkinsons_rf_model.pkl`
+
+### 5. Run the App
+
+```bash
 streamlit run app.py
+```
 
-
-
----
-
-### Open in Browser
-
-[http://localhost:8501](http://localhost:8501/)
+Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-## 🌐 Deployment on Streamlit Cloud
+## 🧩 Notes on Model Input Order
 
-1. Push project to GitHub.  
-2. Login to Streamlit Cloud.  
-3. Select your repository → branch → `app.py`.  
-4. Deploy 🚀  
-5. Get public link (e.g., [https://multi-disease-prediction-system-by-ritikgarg7879.streamlit.app/](https://multi-disease-prediction-system-by-ritikgarg7879.streamlit.app/))  
+* **Diabetes (PIMA):** `[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]`
+* **Heart (Cleveland):** columns in order used during training.
+* **Parkinson's:** use acoustic features in same order as training.
+
+> If pipelines were used, input raw values and preprocessing is handled automatically.
+
+---
+
+## ✅ Deploying to Streamlit Cloud
+
+1. Push repository to GitHub.
+2. Login to Streamlit Cloud and create new app.
+3. Connect repo, select branch and `app.py`.
+4. Deploy and share public link.
 
 ---
 
 ## 📷 Screenshots
-
-<img width="1915" height="929" alt="image" src="https://github.com/user-attachments/assets/b15ca144-a202-4705-ac9e-bcdbdaa14a94" />
-<img width="1918" height="922" alt="image" src="https://github.com/user-attachments/assets/a3dd8fb6-4cec-459b-9796-34000342644e" />
-
+<img width="1915" height="929" alt="Screenshot 2025-10-02 002026" src="https://github.com/user-attachments/assets/e75cc603-da94-40e4-8806-8e19a151628e" />
+<img width="1914" height="910" alt="Screenshot 2025-10-02 002446" src="https://github.com/user-attachments/assets/ea155509-18bc-439c-957f-a8ff19bc8e84" />
+<img width="1918" height="922" alt="Screenshot 2025-10-02 002846" src="https://github.com/user-attachments/assets/615f6afb-500a-4c59-a78d-b462adf0b201" />
 
 ---
 
 ## 👤 Author
 
-**Ritik Garg**  
-🎓 VIT Vellore  
-
-🔗 [LinkedIn](https://www.linkedin.com/in/ritikgarg7879) | [GitHub](https://github.com/ritikgarg7879)
+**Ritik Garg** — VIT Vellore
+GitHub: [ritikgarg7879](https://github.com/ritikgarg7879)
+LinkedIn: [ritikgarg7879](https://www.linkedin.com/in/ritikgarg7879)
 
 ---
-
-✨ This project demonstrates how Machine Learning + Streamlit can be used in healthcare prediction systems.
-
