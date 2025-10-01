@@ -140,6 +140,6 @@ Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 **Ritik Garg** — VIT Vellore
 GitHub: [ritikgarg7879](https://github.com/ritikgarg7879)
-LinkedIn: [ritikgarg7879](https://www.linkedin.com/in/ritikgarg7879)
+LinkedIn: [ritikgarg7879](www.linkedin.com/in/ritik-garg7879)
 
 ---
